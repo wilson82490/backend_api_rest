@@ -6,6 +6,7 @@ import pingRouter from "./routes/ping-router.js";
 import productRouter from "./routes/products-router.js"
 import categoriesRouter from "./routes/categories-router.js";
 import authRouter from "./routes/auth-router.js";
+import cartRouter from "./routes/cart-router.js";
 import mongoose from "mongoose";
 import categoryTypeRouter from "./routes/categoryType.router.js";
 //import { authMiddleware } from "./middlewares/auth.middleware.js";
@@ -31,4 +32,5 @@ app.use("/categories",  categoriesRouter)
 app.use(pingRouter);
 app.use(categoryTypeRouter);
 app.use("/auth", authRouter);
+app.use("/cart", cartRouter);
 export default app;
