@@ -1,10 +1,15 @@
-import {Router} from "express"
-
+import {Router} from "express";
 const router = Router();
 
-router.post("/cart", (req, res)=>{
-    res.send({message: "productos en el carrito"});
-});
+import { addToCart, deleteCart, getCart, removeFromCart } from "../controllers/cart-controller.js";
+import { authMiddleware,  } from "../middlewares/auth.middleware.js";
+
+
+
+router.post("/", authMiddleware, addToCart);
+router.get("/", authMiddleware, getCart );
+router.delete("/", authMiddleware, deleteCart);
+router.delete("/:productId", authMiddleware, removeFromCart);
 
 
 export default router;

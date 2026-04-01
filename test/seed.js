@@ -5,11 +5,14 @@ import "../app.js";
 import Product from "../models/Product.js";
 import Category from "../models/Category.js";
 import User from "../models/User.js";
+import Cart from "../models/Cart.js";
 
 export async function seedDatabase() {
+  await Cart.deleteMany({});
   await User.deleteMany({});
   await Product.deleteMany({});
   await Category.deleteMany({});
+  
 
   const user1 = await User.create({
     email: "test@example.com",
