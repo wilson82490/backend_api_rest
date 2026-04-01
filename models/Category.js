@@ -5,13 +5,13 @@ const categorySchema = new mongoose.Schema({
         type: String,
         required: [true, "Name is required"],
         trim: true,
-        minLength: [3, "Name must be at least 3 characters"],
-        maxLength: [50, "Name must be at most 50 characters"]
+        default: "",
     },
     description: {
         type: String,
         trim: true,
-        maxLength: [500, "Description must be at most 500 characters"]
+        default: "",
+        
     },
   /*   type: {
         type: mongoose.Schema.Types.ObjectId,
